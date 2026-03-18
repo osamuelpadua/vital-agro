@@ -339,7 +339,7 @@ main {
   padding: calc(var(--header-height) + 24px) 0 80px;
   color: var(--white);
   isolation: isolate;
-  background: url('bg-hero.jpeg') center center / cover no-repeat;
+  background: url('bg-hero.jpg') center center / cover no-repeat;
 }
 
 .hero__backdrop {
@@ -347,9 +347,9 @@ main {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at 50% 18%, rgba(247, 139, 67, 0.18), transparent 24%),
-    linear-gradient(180deg, rgba(10, 16, 10, 0.52) 0%, rgba(10, 16, 10, 0.3) 34%, rgba(10, 16, 10, 0.48) 70%, rgba(10, 16, 10, 0.76) 100%),
-    linear-gradient(90deg, rgba(10, 16, 10, 0.24) 0%, rgba(10, 16, 10, 0.06) 48%, rgba(10, 16, 10, 0.24) 100%);
+    radial-gradient(circle at 50% 18%, rgba(247, 139, 67, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(10, 16, 10, 0.66) 0%, rgba(10, 16, 10, 0.46) 34%, rgba(10, 16, 10, 0.62) 70%, rgba(10, 16, 10, 0.85) 100%),
+    linear-gradient(90deg, rgba(10, 16, 10, 0.34) 0%, rgba(10, 16, 10, 0.16) 48%, rgba(10, 16, 10, 0.34) 100%);
 }
 
 .hero__inner {
