@@ -425,6 +425,7 @@ main {
   position: absolute;
   left: 50%;
   bottom: 92px;
+  transform: translateX(-50%);
   z-index: 2;
   display: inline-flex;
   align-items: center;
@@ -440,6 +441,7 @@ main {
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
     0 14px 32px rgba(7, 11, 7, 0.14);
   backdrop-filter: blur(8px);
+  will-change: transform;
   animation: hero-scroll-float 2.6s ease-in-out infinite;
   transition:
     border-color 180ms ease,
@@ -1055,8 +1057,12 @@ main {
   }
 
   .nav {
-    flex-wrap: wrap;
-    padding: 10px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 10px 0 0;
+    text-align: center;
   }
 
   .nav .button,
@@ -1064,11 +1070,17 @@ main {
     width: 100%;
   }
 
+  .brand {
+    justify-content: center;
+  }
+
   .button {
     padding-inline: 28px;
   }
 
   .brand img {
+    display: block;
+    margin: 0 auto;
     width: 184px;
   }
 
@@ -1232,5 +1244,9 @@ main {
   *::after {
     animation-duration: 0ms !important;
     transition-duration: 0ms !important;
+  }
+
+  .hero__scroll-cue {
+    animation: hero-scroll-float 2.6s ease-in-out infinite !important;
   }
 }
