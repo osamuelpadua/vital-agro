@@ -359,7 +359,7 @@ main {
   padding: calc(var(--header-height) + 34px) 0 80px;
   color: var(--white);
   isolation: isolate;
-  background: url('bg-hero.webp') center center / cover no-repeat;
+  background: url('bg-hero.webp?v=2') center center / cover no-repeat;
 }
 
 .hero__backdrop {
