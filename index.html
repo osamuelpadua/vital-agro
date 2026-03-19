@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=7" />
   </head>
   <body>
     <header class="site-header">
@@ -22,7 +22,10 @@
         <a class="brand" href="#inicio" aria-label="Vital Agro - voltar ao início">
           <img src="logo.svg" alt="Logo da Vital Agro" width="247" height="40" />
         </a>
-        <a class="button button--header" href="#contato">Fale com a Vital Agro</a>
+        <a class="button button--header button--split-label" href="#contato"
+          ><span class="button__prefix">Fale com a</span
+          ><span class="button__brand">Vital Agro</span></a
+        >
       </nav>
     </header>
 
@@ -41,11 +44,12 @@
               <span>leitura de mercado, agilidade comercial e confiança em cada negociação.</span>
             </p>
             <a
-              class="button button--primary button--large"
+              class="button button--primary button--large button--split-label hero__cta"
               href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Vital%20Agro."
               target="_blank"
               rel="noreferrer"
-              >Fale com a Vital Agro</a
+              ><span class="button__prefix">Fale com a</span
+              ><span class="button__brand">Vital Agro</span></a
             >
             <ul class="hero__tags" aria-label="Grãos negociados">
               <li>Milho</li>
@@ -310,5 +314,6 @@
         <div class="site-footer__spacer" aria-hidden="true"></div>
       </div>
     </footer>
+    <script src="script.js?v=4" defer></script>
   </body>
 </html>

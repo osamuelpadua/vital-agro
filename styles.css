@@ -145,6 +145,18 @@ a {
   min-height: 56px;
 }
 
+.button--split-label {
+  gap: 0.32em;
+}
+
+.button__prefix {
+  font-weight: 400;
+}
+
+.button__brand {
+  font-weight: 800;
+}
+
 .button--primary {
   border-color: var(--orange-500);
   background: var(--orange-500);
@@ -379,8 +391,11 @@ main {
 #hero-title {
   max-width: 980px;
   color: var(--white);
+  font-family: 'Montserrat', sans-serif;
   font-size: 48px;
-  line-height: 1.02;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
   text-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
 }
 
@@ -398,6 +413,11 @@ main {
 
 .hero__lead span {
   display: block;
+}
+
+.hero__cta {
+  font-size: 1.08rem;
+  letter-spacing: -0.015em;
 }
 
 .hero__tags {
@@ -462,33 +482,27 @@ main {
   --scroll-arrow-color: rgba(241, 244, 210, 0.96);
   position: relative;
   display: block;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(var(--scroll-arrow-color), var(--scroll-arrow-color)) center
-    1px / 2px 12px no-repeat;
+  width: 18px;
+  height: 18px;
 }
 
-.hero__scroll-icon::before,
 .hero__scroll-icon::after {
   content: '';
   position: absolute;
-  bottom: 1px;
-  width: 10px;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--scroll-arrow-color);
+  left: 50%;
 }
 
 .hero__scroll-icon::before {
-  left: 50%;
-  transform: translateX(-92%) rotate(45deg);
-  transform-origin: right center;
+  content: none;
 }
 
 .hero__scroll-icon::after {
-  left: 50%;
-  transform: translateX(-8%) rotate(-45deg);
-  transform-origin: left center;
+  top: 4.5px;
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--scroll-arrow-color);
+  border-bottom: 1.5px solid var(--scroll-arrow-color);
+  transform: translateX(-50%) rotate(45deg);
 }
 
 @keyframes hero-scroll-float {
@@ -639,6 +653,55 @@ main {
 .process-row {
   display: grid;
   gap: 1.5rem;
+}
+
+.scroll-reveal {
+  --reveal-delay: 0ms;
+  --reveal-y: 36px;
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.is-reveal-ready {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-y), 0);
+  transform-origin: 50% 100%;
+  transition:
+    opacity 760ms var(--reveal-ease) var(--reveal-delay),
+    transform 760ms var(--reveal-ease) var(--reveal-delay),
+    box-shadow 760ms var(--reveal-ease) var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-reveal-ready.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-reveal--soft.is-reveal-ready {
+  transform: none;
+  transition: opacity 320ms ease-out var(--reveal-delay);
+}
+
+.media-frame--step.scroll-reveal img,
+.media-frame--proof.scroll-reveal img,
+.media-frame--diferencial.scroll-reveal img {
+  transform: translate3d(0, 18px, 0) scale(1.03);
+  transition: transform 920ms var(--reveal-ease) var(--reveal-delay);
+  will-change: transform;
+}
+
+.media-frame--step.scroll-reveal--soft img,
+.media-frame--proof.scroll-reveal--soft img,
+.media-frame--diferencial.scroll-reveal--soft img {
+  transform: none;
+  transition: none;
+  will-change: auto;
+}
+
+.media-frame--step.scroll-reveal.is-reveal-ready.is-revealed img,
+.media-frame--proof.scroll-reveal.is-reveal-ready.is-revealed img,
+.media-frame--diferencial.scroll-reveal.is-reveal-ready.is-revealed img {
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .step-card {
@@ -1239,14 +1302,17 @@ main {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0ms !important;
-    transition-duration: 0ms !important;
+  .scroll-reveal.is-reveal-ready {
+    transform: none;
+    transition: opacity 320ms ease-out var(--reveal-delay);
+    will-change: opacity;
   }
 
-  .hero__scroll-cue {
-    animation: hero-scroll-float 2.6s ease-in-out infinite !important;
+  .media-frame--step.scroll-reveal img,
+  .media-frame--proof.scroll-reveal img,
+  .media-frame--diferencial.scroll-reveal img {
+    transform: none;
+    transition: none;
+    will-change: auto;
   }
 }
