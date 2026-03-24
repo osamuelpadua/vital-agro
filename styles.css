@@ -442,17 +442,14 @@ main {
 }
 
 .hero__scroll-cue {
-  position: absolute;
-  left: 50%;
-  bottom: 92px;
-  transform: translateX(-50%);
+  position: relative;
   z-index: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 60px;
   height: 60px;
-  margin-top: 0;
+  margin-top: 0.7rem;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
   background: rgba(18, 27, 17, 0.28);
@@ -508,11 +505,11 @@ main {
 @keyframes hero-scroll-float {
   0%,
   100% {
-    transform: translate(-50%, -2px);
+    transform: translateY(-2px);
   }
 
   50% {
-    transform: translate(-50%, 6px);
+    transform: translateY(6px);
   }
 }
 
@@ -1154,7 +1151,6 @@ main {
   }
 
   .hero__scroll-cue {
-    bottom: 72px;
     width: 56px;
     height: 56px;
   }
