@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/nzwzh42zq2wy/public_html/
+    - /bin/cp -R %{home}/repositories/vital-agro/* $DEPLOYPATH
